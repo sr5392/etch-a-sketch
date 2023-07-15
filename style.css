@@ -31,12 +31,10 @@ body {
 #grid-container {
     width: 64vmin;
     height: 64vmin;
+    box-sizing: initial;
+    border: 1px solid black;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-}
-
-.grid-item {
-    border: 1px solid black;
 }
