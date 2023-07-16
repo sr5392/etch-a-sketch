@@ -21,11 +21,19 @@ body {
     flex-direction: column;
     justify-self: center;
     align-items: center;
+    gap: 1em;
     margin: 1em;
 }
 
 #slider {
     width: 64vmin;
+}
+
+#slider-grid-size {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 #grid-container {
@@ -37,4 +45,12 @@ body {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+}
+
+#button-reset-grid {
+    margin: 1em;
+    width: 10vmin;
+    height: 5vmin;
+    min-width: 50px;
+    min-height: 27px;
 }

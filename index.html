@@ -9,9 +9,13 @@
 </head>
 <body>
     <div class="settings">
-        <p id="grid-size">32</p>
-        <input type="range" min="2" max="64" value="32" step="2" id="slider">
+        <input type="color" id="color-picker">
+        <div id="slider-grid-size">
+            <p id="grid-size">32</p>
+            <input type="range" min="2" max="64" value="32" step="2" id="slider">
+        </div>
     </div>
     <div id="grid-container"></div>
+    <button id="button-reset-grid">Reset</button>
 </body>
 </html>

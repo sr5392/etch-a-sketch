@@ -1,6 +1,9 @@
 let mouseHold = false;
+
 document.addEventListener("mousedown", mouseAction);
 document.addEventListener("mouseup", mouseAction);
+
+const colorPicker = document.querySelector("#color-picker");
 
 const slider = document.querySelector("#slider");
 slider.addEventListener("input", updateGrid);
@@ -10,6 +13,10 @@ const gridContainer = document.querySelector("#grid-container");
 
 const gridItem = document.createElement("div");
 gridItem.classList.add("grid-item");
+gridItem.style.backgroundColor = "white";
+
+const buttonResetGrid = document.querySelector("#button-reset-grid");
+buttonResetGrid.addEventListener("click", resetGrid);
 
 function updateGrid() {
     gridContainer.innerHTML = "";
@@ -28,8 +35,14 @@ function updateGrid() {
 
         gridContainer.appendChild(tmpGridItem);
     }
-
     pGridSize.innerText = gridSize;
+}
+
+function resetGrid() {
+    const gridItems = gridContainer.childNodes;
+    for (const gridItem of gridItems) {
+        gridItem.style.backgroundColor = "white";
+    }
 }
 
 function mouseAction(event) {
@@ -37,20 +50,19 @@ function mouseAction(event) {
         mouseHold = true;
         return;
     }
-
     mouseHold = false;
 }
 
 function updateGridItem(event) {
+    const color = colorPicker.value;
+
     if (event.type == "mouseover") {
         if (mouseHold) {
-            this.style.backgroundColor = "black";
+            this.style.backgroundColor = color;
         }
-
         return;
     }
-    
-    this.style.backgroundColor = "black";     
+    this.style.backgroundColor = color;     
 }
 
 function preventDragging(event) {
