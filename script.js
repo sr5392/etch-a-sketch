@@ -33,6 +33,8 @@ function updateGrid() {
    
     if (checkboxShowGrid.checked) {
         gridItem.classList.add("show-border");
+    } else {
+        gridItem.classList.remove("show-border");
     }
 
     for (let i = 0; i < gridSize**2; i++) {
